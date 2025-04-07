@@ -14,10 +14,10 @@ export default function LandingPage() {
       <Hero>
         <div style={{ paddingBottom: '0.7em' }}>
           <Frame>
-            <img src={logoUrl.src} alt="Logo of sudo-flix" />
+            <img src={logoUrl.src} alt="Logo of P-Stream" />
           </Frame>
         </div>
-        <Hero.Title>sudo-flix</Hero.Title>
+        <Hero.Title>P-Stream</Hero.Title>
         <Hero.Subtitle>
           A cutesy app for watching your favorite movies and shows. Totally free
           and open source, forever!
@@ -32,7 +32,7 @@ export default function LandingPage() {
       <Frame plain={true}>
         <CardGrid>
           <Card icon="material-symbols:hangout-video-off" title="No Ads">
-            sudo-flix will never show ads, enjoy watching without interruptions.
+            P-Stream will never show ads, enjoy watching without interruptions.
           </Card>
           <Card icon="ic:baseline-ondemand-video" title="Custom Player">
             Enjoy a fully custom video player including streaming integration,
@@ -51,7 +51,7 @@ export default function LandingPage() {
             bookmarks sync effortlessly across all your devices.
           </Card>
           <Card icon="mdi:power-plug-outline" title="Modular by design">
-            Mix and match different parts of the sudo-flix service, host your
+            Mix and match different parts of the P-Stream service, host your
             backend or use ours, it&apos;ll work either way.
           </Card>
           <Card icon="mdi:flag" title="Multiple Languages">

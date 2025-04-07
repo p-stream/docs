@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const redirectTitle = 'Weblate';
-const redirectUrl = 'https://weblate.tinypixel.uk/projects/sudo-flix/main/';
+const redirectUrl = 'https://weblate.tinypixel.uk/projects/P-Stream/main/';
 
 export default function WeblateRedirect() {
   const [countdown, setCountdown] = useState(5);
@@ -40,7 +40,7 @@ export default function WeblateRedirect() {
         <h1
           style={{ fontSize: '2.5em', paddingBlock: '0.6em', color: '#A6A4AE' }}
         >
-          Sudo-Flix {redirectTitle}
+          P-Stream {redirectTitle}
         </h1>
         <hr
           style={{
@@ -107,7 +107,7 @@ export default function WeblateRedirect() {
           fontSize: '0.7em',
         }}
       >
-        <p>© 2024 sudo-flix</p>
+        <p>© 2024 P-Stream</p>
         <p>
           Follow us on{' '}
           <a

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const redirectTitle = 'Discord';
-const redirectUrl = 'https://discord.gg/mxhcENzG2j';
+const redirectUrl = 'https://discord.gg/jZ6kkzADWS';
 
 export default function WeblateRedirect() {
   const [countdown, setCountdown] = useState(5);
@@ -40,12 +40,12 @@ export default function WeblateRedirect() {
         <h1
           style={{ fontSize: '2.5em', paddingBlock: '0.6em', color: '#A6A4AE' }}
         >
-          Sudo-Flix {redirectTitle}
+          P-Stream {redirectTitle}
         </h1>
         <hr
           style={{
             marginInline: '2em',
-            border: 'solid 0.1em #37334C',
+            border: 'solid 0.1em #33344CFF',
           }}
         />
       </div>
@@ -61,7 +61,7 @@ export default function WeblateRedirect() {
           style={{
             padding: '1em',
             marginInline: '2.5em',
-            border: 'solid 0.1em #37334C',
+            border: 'solid 0.1em #33334CFF',
             borderRadius: '0.35em',
             alignItems: 'center',
             textAlign: 'center',
@@ -107,9 +107,9 @@ export default function WeblateRedirect() {
           fontSize: '0.7em',
         }}
       >
-        <p>© 2024 sudo-flix</p>
+        <p>© 2025 P-Stream</p>
         <p>
-          Follow us on{' '}
+          {/* Follow us on{' '}
           <a
             href="https://x.com/sudoFlix"
             onMouseEnter={(e) =>
@@ -121,9 +121,9 @@ export default function WeblateRedirect() {
           >
             Twitter
           </a>{' '}
-          and check out our{' '}
+          and check out our{' '} */}
           <a
-            href="https://github.com/sussy-code"
+            href="https://github.com/Pasiteha0"
             onMouseEnter={(e) =>
               (e.currentTarget.style.textDecoration = 'underline')
             }
@@ -133,7 +133,7 @@ export default function WeblateRedirect() {
           >
             Github
           </a>
-          .
+          {/* . */}
         </p>
       </div>
     </div>

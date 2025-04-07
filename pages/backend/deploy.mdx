@@ -9,7 +9,9 @@ The only officially recognized hosting method is through Docker (or similar cont
 For configuration, check out the [configuration reference](./configuration.mdx).
 
 <Note>
-The postgres database will need to be populated with [migrations](./introduction.mdx#migrations) if `postgres.migrateOnBoot` isn't enabled.
+  The postgres database will need to be populated with
+  [migrations](./introduction.mdx#migrations) if `postgres.migrateOnBoot` isn't
+  enabled.
 </Note>
 
 ## Method 1 - Docker Deployment
@@ -18,10 +20,11 @@ This method provides a straightforward setup with minimal configuration. For mor
 
 **Prerequisites**
 
-* **Docker:** If you don't have Docker installed, download it from the official website: [Docker installation](https://www.docker.com/get-started)
-* **Docker Compose:** Install Docker Compose following the instructions for your operating system: [Docker-Compose installation](https://docs.docker.com/compose/install/)
+- **Docker:** If you don't have Docker installed, download it from the official website: [Docker installation](https://www.docker.com/get-started)
+- **Docker Compose:** Install Docker Compose following the instructions for your operating system: [Docker-Compose installation](https://docs.docker.com/compose/install/)
 
 **Setup**
+
 <Steps>
   <Steps.Step>
      **Create `docker-compose.yml`:**
@@ -37,13 +40,13 @@ This method provides a straightforward setup with minimal configuration. For mor
            ports:
              - "5432:5432" 
            networks:
-             - sudo-flix-network
-         sudo-flix:
+             - p-stream-network
+         p-stream:
            image: ghcr.io/sussy-code/backend:latest
            environment:
              MWB_POSTGRES__CONNECTION: postgresql://movie_web_user:YourPasswordHere@postgres:5432/movie_web_backend
              MWB_CRYPTO__SESSION_SECRET: 32CharacterLongStringHere 
-             MWB_META__NAME: unofficial-sudo-flix 
+             MWB_META__NAME: unofficial-backend
              MWB_POSTGRES__MIGRATE_ON_BOOT: "true"
              MIKRO_ORM_MIGRATIONS_DISABLE_FOREIGN_KEYS: "true" 
            ports:
@@ -51,9 +54,9 @@ This method provides a straightforward setup with minimal configuration. For mor
            depends_on:
              - postgres
            networks:
-             - sudo-flix-network
+             - p-stream-network
        networks:
-         sudo-flix-network: 
+         p-stream-network: 
            driver: bridge
     ```
       **Important:** 
@@ -65,14 +68,15 @@ This method provides a straightforward setup with minimal configuration. For mor
     **Start the Backend:**  Open a terminal in the directory containing `docker-compose.yml` and execute:
 
      ```bash
-     docker-compose up -d 
+     docker-compose up -d
      ```
+
   </Steps.Step>
 </Steps>
 
 ### Accessing Your Backend
 
-Your backend should be accessible on `(YourPrivateIP):80`. To share it outside your local network, you'll need to configure port forwarding or cloudflared tunnel. 
+Your backend should be accessible on `(YourPrivateIP):80`. To share it outside your local network, you'll need to configure port forwarding or cloudflared tunnel.
 
 ### Optional: Implementing a Reverse Proxy
 
@@ -90,32 +94,41 @@ Railway offers you $5 of credit once you verify your account, which is enough to
 
 <Steps>
   <Steps.Step>
-    Login to your [Railway](https://railway.app) account if you have one, otherwise create one [here](https://railway.app/login).
-      - If you are signing up, then verify your account by clicking the link in the email Railway sends you.
-      - If you created your account with an email, then to verify your account further, go to your account, then plans and verify your account with a GitHub account.
+    Login to your [Railway](https://railway.app) account if you have one,
+    otherwise create one [here](https://railway.app/login). - If you are signing
+    up, then verify your account by clicking the link in the email Railway sends
+    you. - If you created your account with an email, then to verify your
+    account further, go to your account, then plans and verify your account with
+    a GitHub account.
   </Steps.Step>
-  
+
   <Steps.Step>
-    Click the [`Deploy on Railway`](https://railway.app/template/TS4mw5) button above.
+    Click the [`Deploy on Railway`](https://railway.app/template/TS4mw5) button
+    above.
   </Steps.Step>
-  
+
   <Steps.Step>
-    If a `Configure` button is displayed, click on it and allow Railway to access your GitHub account. 
+    If a `Configure` button is displayed, click on it and allow Railway to
+    access your GitHub account.
   </Steps.Step>
-  
+
   <Steps.Step>
     Fill in the required variables or change the default values.
   </Steps.Step>
-  
+
   <Steps.Step>
-    The `Deploy` button at the bottom of the template should be active, click on it.
+    The `Deploy` button at the bottom of the template should be active, click on
+    it.
   </Steps.Step>
-  
+
   <Steps.Step>
-    Once the `Backend` service has deployed, copy the URL from the `Deployments` page. (Might take a second for it to be available after the service has deployed)
+    Once the `Backend` service has deployed, copy the URL from the `Deployments`
+    page. (Might take a second for it to be available after the service has
+    deployed)
   </Steps.Step>
-  
+
   <Steps.Step>
-    Congratulations! You have deployed the backend, you can now [set up the client](../self-hosting/use-backend.mdx).
+    Congratulations! You have deployed the backend, you can now [set up the
+    client](../self-hosting/use-backend.mdx).
   </Steps.Step>
 </Steps>

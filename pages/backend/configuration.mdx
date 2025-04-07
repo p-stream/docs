@@ -13,8 +13,10 @@ The backend can be configured in 3 different ways:
 These different config options are all mutually inclusive, so you can use multiple at the same time if you want to.
 
 <Warning>
-With any of these configurations, you have to have atleast three variables set for the server to function:
-[`postgres.connection`](#postgres-connection-⚠), [`crypto.sessionSecret`](#crypto-session-secret-⚠) and [`meta.name`](#meta-name-⚠)
+  With any of these configurations, you have to have atleast three variables set
+  for the server to function: [`postgres.connection`](#postgres-connection-⚠),
+  [`crypto.sessionSecret`](#crypto-session-secret-⚠) and
+  [`meta.name`](#meta-name-⚠)
 </Warning>
 
 ### Method 1 - `config.json`
@@ -58,7 +60,7 @@ Port number that the HTTP server listens on.
 
 - Type: `string`
 - Default: `""`
-- Example: `"https://sudo-flix.lol https://testing.sudo-flix.app"`
+- Example: `"https://pstream.org https://testing.pstream.org"`
 
 Space separated list of allowed origins.
 
@@ -90,9 +92,7 @@ Controls whether the server should trust Cloudflare IP headers. This is used to 
 
 Prefix for which path is being listened on. Useful if you're hosting on `example.com/backend` for example.
 
-<Note>
-If this is set, you shouldn't apply URL rewriting before proxying.
-</Note>
+<Note>If this is set, you shouldn't apply URL rewriting before proxying.</Note>
 
 ## Logging
 
@@ -117,7 +117,7 @@ All configurations related to how postgres functions.
 Connection URL for postgres instance, should contain the database in the URL.
 
 <Caution>
-**Required. The backend will not start if this is not configured.**
+  **Required. The backend will not start if this is not configured.**
 </Caution>
 
 ### `postgres.migrateOnBoot`
@@ -128,7 +128,8 @@ Connection URL for postgres instance, should contain the database in the URL.
 Run all [migrations](./introduction.mdx#migrations) that haven't ran yet on boot.
 
 <Warning>
-If you have multiple replicas running, this can cause a lot of issues. We recommend only using this if you run only one replica.
+  If you have multiple replicas running, this can cause a lot of issues. We
+  recommend only using this if you run only one replica.
 </Warning>
 
 ### `postgres.debugLogging`
@@ -138,9 +139,7 @@ If you have multiple replicas running, this can cause a lot of issues. We recomm
 
 Log all postgres queries in the console. Useful for debugging issues with the database.
 
-<Warning>
-This outputs sensitive, **DO NOT** run it in production.
-</Warning>
+<Warning>This outputs sensitive, **DO NOT** run it in production.</Warning>
 
 ### `postgres.ssl`
 
@@ -160,7 +159,7 @@ All configurations related to cryptography.
 The secret used to sign sessions. **Must be at least 32 characters long.**
 
 <Caution>
-**Required. The backend will not start if this is not configured.**
+  **Required. The backend will not start if this is not configured.**
 </Caution>
 
 ## Meta
@@ -170,19 +169,19 @@ These options configure how the server will display itself to the frontend.
 ### `meta.name` ⚠
 
 - Type: `string`
-- Example: `"Unofficial sudo-flix"`
+- Example: `"Unofficial backend"`
 
 The name of the backend instance, this will be displayed to users who try to create an account.
 
 <Caution>
-**Required. The backend will not start if this is not configured.**
+  **Required. The backend will not start if this is not configured.**
 </Caution>
 
 ### `meta.description`
 
 - Type: `string`
 - Default: `""`
-- Example: `"This is not an official instance of sudo-flix"`
+- Example: `"This is not an official instance of the backend"`
 
 The description of the backend instance, this will be displayed to users who try to create an account.
 
@@ -198,7 +197,7 @@ All configurations related to adding captcha functionality. Captchas' help to pr
 Enables [Recaptcha](https://www.google.com/recaptcha/about/) support for user registration and login. [You can follow this guide to create a Recaptcha key](https://cloud.google.com/recaptcha-enterprise/docs/create-key-website#create-key).
 
 <Warning>
-If this is enabled, all other captcha related settings are required.
+  If this is enabled, all other captcha related settings are required.
 </Warning>
 
 ### `captcha.secret`
@@ -222,7 +221,8 @@ If this is enabled, all other captcha related settings are required.
 All configuration options related to adding ratelimiting functionality. Helps to protect against bot attacks or spammy users.
 
 <Note>
-Make sure your IP headers are properly forwarded if you're using a reverse proxy. Also see [`server.trustProxy`](#server-trust-proxy).
+  Make sure your IP headers are properly forwarded if you're using a reverse
+  proxy. Also see [`server.trustProxy`](#server-trust-proxy).
 </Note>
 
 ### `ratelimits.enabled`
@@ -233,7 +233,7 @@ Make sure your IP headers are properly forwarded if you're using a reverse proxy
 Enables ratelimiting some more expensive endpoints.
 
 <Warning>
-If this is enabled, all other ratelimit related settings are required.
+  If this is enabled, all other ratelimit related settings are required.
 </Warning>
 
 ### `ratelimits.redisUrl`

@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-            
+
       - uses: pnpm/action-setup@v3
         with:
           version: 8
@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-  
+
       - name: Install pnpm packages
         run: pnpm install
-      
+
       - name: Run ESLint
         run: pnpm run lint
