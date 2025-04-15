@@ -38,8 +38,7 @@ export default defineTheme({
   ],
   contentFooter: {
     text: 'Made with :3 (sillyness)',
-    editRepositoryBase:
-      'https://github.com/p-stream/docs/blob/master',
+    editRepositoryBase: 'https://github.com/p-stream/docs/blob/master',
     socials: [
       social.github('https://github.com/p-stream'),
       social.discord('/links/discord'),
