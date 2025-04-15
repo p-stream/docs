@@ -28,7 +28,7 @@
           - p-stream-network
 
       p-stream-backend:
-        image: ghcr.io/sussy-code/backend:latest
+        image: ghcr.io/p-stream/backend:latest
         restart: unless-stopped
         environment:
           MWB_SERVER__CORS: "https://movie-backend.example.tld https://movie.example.tld"
@@ -51,7 +51,7 @@
 
       p-stream-frontend:
         build:
-          context: https://github.com/sussy-code/smov.git
+          context: https://github.com/p-stream/p-stream.git
           args:
             TMDB_READ_API_KEY: "YourTMDBReadAPIKeyHere"
             CORS_PROXY_URL: "https://cors.example.tld https://second.cors.example.tld"
@@ -68,7 +68,7 @@
         restart: unless-stopped
 
       p-stream-proxy:
-        image: ghcr.io/sussy-code/sudo-proxy:latest
+        image: ghcr.io/p-stream/simple-proxy:latest
         ports:
           - "3000:3000"
         networks:

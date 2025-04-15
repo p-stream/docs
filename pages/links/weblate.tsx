@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const redirectTitle = 'Weblate';
-const redirectUrl = 'https://weblate.tinypixel.uk/projects/P-Stream/main/';
+const redirectUrl = 'https://weblate.pstream.org/projects/p-stream/p-stream';
 
 export default function WeblateRedirect() {
   const [countdown, setCountdown] = useState(5);
@@ -123,7 +123,7 @@ export default function WeblateRedirect() {
           </a>{' '}
           and check out our{' '}
           <a
-            href="https://github.com/sussy-code"
+            href="https://github.com/p-stream"
             onMouseEnter={(e) =>
               (e.currentTarget.style.textDecoration = 'underline')
             }

@@ -25,7 +25,7 @@ export default function LandingPage() {
         <Hero.Actions>
           <div style={{ display: 'flex', gap: '1em' }}>
             <Button to="/self-hosting/hosting-intro">Get Started</Button>
-            <Button to="https://github.com/Pasithea0/smov" type="secondary">
+            <Button to="https://github.com/Pasithea0/p-stream" type="secondary">
               Open on GitHub
             </Button>
           </div>

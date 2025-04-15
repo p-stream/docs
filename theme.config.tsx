@@ -11,7 +11,7 @@ import coverUrl from './public/cover.png';
 import faviconUrl from './public/favicon.ico';
 
 const starLinks = [
-  link('GitHub', 'https://github.com/Pasithea0/smov', {
+  link('GitHub', 'https://github.com/Pasithea0/p-stream', {
     style: 'star',
     newTab: true,
     icon: 'akar-icons:github-fill',
@@ -24,7 +24,7 @@ const starLinks = [
 ];
 
 export default defineTheme({
-  github: 'Pasithea0/smov',
+  github: 'Pasithea0/p-stream',
   navigation: [
     link('Discord', '/links/discord', {
       style: 'star',
@@ -38,7 +38,8 @@ export default defineTheme({
   ],
   contentFooter: {
     text: 'Made with :3 (sillyness)',
-    editRepositoryBase: 'https://github.com/Pasithea0/smov-docs/blob/master',
+    editRepositoryBase:
+      'https://github.com/Pasithea0/p-stream-docs/blob/master',
     socials: [
       social.github('https://github.com/Pasithea0'),
       social.discord('/links/discord'),
