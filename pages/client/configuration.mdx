@@ -29,7 +29,8 @@ window.__CONFIG__ = {
 };
 ```
 
-## Config Reference - Shared Config
+## Required Config Reference:
+---
 
 ### `VITE_TMDB_READ_API_KEY` ⚠
 
@@ -58,6 +59,26 @@ You can add multiple Workers by separating them with a comma, they will be load 
 <Caution>
   **Required. The client will not work properly if this is not configured.**
 </Caution>
+
+### `VITE_M3U8_PROXY_URL`
+
+- Type: `string`
+- Default: `""`
+- Example: `"https://example1.example.com,https://example2.example.com"`
+
+**The same proxy as above**, but used to proxy streams. However, it **must** be hosted on a server that is NOT blocked by FlixHQ. See this [explainer](../proxy/introduction.mdx).
+
+If left empty, some streams, notibly streams from FlixHQ, WILL NOT work.
+
+You can add multiple Workers by separating them with a comma, they will be load balanced using round robin method on the client.
+**Worker URL entries must not end with a slash.**
+
+<Caution>
+  **Required. The client will not work properly if this is not configured.**
+</Caution>
+
+## Optional Config Reference:
+---
 
 ### `VITE_DMCA_EMAIL`
 

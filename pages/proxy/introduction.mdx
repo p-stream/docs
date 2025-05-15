@@ -4,8 +4,15 @@ title: 'Introduction'
 
 # Introduction to the proxy
 
-Our proxy is used to bypass CORS-protected URLs on the client side, allowing users to make requests to CORS protected endpoints without a backend server.
+The proxy has **two** functions and is **required** to self host the project entirely. 
 
+<Warning>
+No. 2 only applies if you are also deploying the **client**.
+</Warning>
+
+1. The proxy is used to bypass CORS-protected URLs on the client side, allowing users to make requests to CORS protected endpoints without a backend server.
 The proxy is made using [Nitro by UnJS](https://nitro.unjs.io/) which supports building the proxy to work on multiple providers including Cloudflare Workers, AWS Lambda and [more...](https://nitro.unjs.io/deploy)
 
-Our recommended provider is Netlify due to its [generous free plan](https://www.netlify.com/pricing/#core-pricing-table).
+2. For site admins (self hosters), the proxy is also used to bypass m3u8 stream header restrictions for sites such as FlixHQ. Because of this active restriction, this proxy needs to be hosted on a VPS, platform, or home server that's IP is **NOT** blocked by FlixHQ or otherwise.
+
+On the following page there are guides to set up the proxy on Cloudflare, Netlify, etc. However, due to this IP restriction the site admin cannot host there. Normal users are still able to.

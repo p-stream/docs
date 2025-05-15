@@ -4,7 +4,18 @@ title: 'Deploy'
 
 # Deploying the proxy
 
-## Method 1 - Netlify (Easy)
+
+<Warning>
+**Selfhosting the client as well?**
+
+Please read [THIS](./introduction.mdx) and use Method 4 (Docker) or Method 5 (Manual)!
+
+Cloudflare and Netlify's IPs are blocked by FlixHQ and the proxy MUST be hosted on a VPS or other server.
+
+</Warning>
+
+
+## Method 1 - Netlify (Easy) 
 
 Netlify has a very generous free plan, so you'll be able to host your proxy for free unless you get hundreds of users.
 
@@ -120,68 +131,6 @@ Cloudflare has a generous free plan, so you don't need to pay anything unless yo
   </Steps.Step>
 </Steps>
 
-## Method 2 - Cloudflare (Manual)
-
-<Steps>
-  <Steps.Step>
-    Login to your Cloudflare account if you have one, otherwise create one
-    [here](https://dash.cloudflare.com/sign-up?to=/:account/workers-and-pages) -
-    If you are signing up for an account, make sure to verify your email before
-    going further!
-  </Steps.Step>
-
-  <Steps.Step>
-    Download the latest version of the Cloudflare [`sudo-proxy-cloudflare.mjs`
-    script from
-    here](https://github.com/p-stream/simple-proxy/releases/download/v2.1.5/simple-proxy-cloudflare.mjs).
-  </Steps.Step>
-
-  <Steps.Step>
-    Go to `Workers & Pages` and then `Overview` in the left-hand navigation bar.
-  </Steps.Step>
-
-  <Steps.Step>
-    Click the `Create Worker` button - If you've made a worker or pages
-    application before, you will need to click `Create Application` first - Give
-    your worker a name and click `Deploy`. This can be anything you would like!
-  </Steps.Step>
-
-  <Steps.Step>
-    On the `Congratulations` web page, click the `Edit code` button to edit the
-    code in the worker you have just created.
-  </Steps.Step>
-
-  <Steps.Step>
-    There should now be a code editor on the left hand side on the web page. -
-    Select all of the existing template code and delete it. **You must make sure
-    all of the code is deleted for this to work!** - Go to your downloads folder
-    and open up the `sudo-proxy-cloudflare.mjs` file you downloaded earlier in a
-    text editor, and **copy** the contents. - Back in your browser, paste the
-    contents of the file into the code editor.
-  </Steps.Step>
-
-  <Steps.Step>
-    The `Save and deploy` button in the top right corner should now be active,
-    click it to deploy your proxy!
-  </Steps.Step>
-
-  <Steps.Step>
-    A confirmation dialog will appear, click `Save and deploy` once more.
-  </Steps.Step>
-
-  <Steps.Step>
-    Your worker is now deployed! You can click the back button in the top left
-    to take you back to the summary screen.
-  </Steps.Step>
-
-  <Steps.Step>
-    On the summary screen, your worker link will be displayed under `Preview`.
-    Right click the link, click `Copy link address` and save the link somewhere
-    - [you will need it to set up the
-    client](../5.extra/1.streaming.md#method-1---self-hosted-proxy)!
-  </Steps.Step>
-</Steps>
-
 ## Method 3 - Railway (Easy)
 
 Railway offers you $5 of credit once you verify your account, which is enough to run the proxy for around 5-7 months.
@@ -223,6 +172,7 @@ Railway offers you $5 of credit once you verify your account, which is enough to
 </Steps>
 
 ## Method 4 - Docker
+If you know what you are doing, you should know what to do with this information. If you don't, then please follow our Cloudflare guides.
 
 <Warning>
   Experience with Docker, domains and web hosting is **highly recommended** for
@@ -236,4 +186,31 @@ P-Stream does not have a Docker image for the proxy yet. You can create one your
 
 The container exposes the HTTP port (Without TLS/SSL) as `3000/TCP`.
 
+## Method 5 - Manual
 If you know what you are doing, you should know what to do with this information. If you don't, then please follow our Cloudflare guides.
+
+Manually installing the proxy on your server. You may want to use an automated package manager like nixpacks to do this.
+
+<Steps>
+  <Steps.Step>
+    Clone the repo on your server `git clone https://github.com/p-stream/simple-proxy`
+  </Steps.Step>
+
+  <Steps.Step>
+    Navigate to the directory `cd simple-proxy`
+  </Steps.Step>
+
+  <Steps.Step>
+    Install packages `pnpm i`
+  </Steps.Step>
+
+  <Steps.Step>
+    Build the app `pnpm build`
+  </Steps.Step>
+
+  <Steps.Step>
+    Start the proxy `pnpm start`
+  </Steps.Step>
+</Steps>
+
+You'll need to configure port forwarding and firewall settings. Good luck.
